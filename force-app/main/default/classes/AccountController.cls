@@ -8,8 +8,7 @@ public class AccountController{
             
             for(Account act:accounts)
             {
-                //Contact Creation logic
-                //or other logic
+                system.debug('test');
             }
         }
     }
