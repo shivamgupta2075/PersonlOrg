@@ -1,0 +1,32 @@
+.slds-modal__container {
+    max-width: 100rem !important;
+    width:90% !important;
+}
+img{
+    width:24px;
+    height:24px;
+    color:yellow;
+}
+
+
+.slds-hyphenate  {
+    text-align: left!important;
+  }
+  .slds-modal__container {
+    max-width: 80rem !important;
+    width: 80% !important;
+}
+lightning-input{
+    margin-top:-18px!important;
+    width:100% !important;
+}
+tbody {
+    margin:0px !important;
+}
+
+.slds-input-has-icon_left-right .slds-input, .slds-input-has-icon_left-right .slds-input_bare, .slds-input-has-icon_left-right .slds-input--bare, .slds-input-has-icon--left-right .slds-input, .slds-input-has-icon--left-right .slds-input_bare, .slds-input-has-icon--left-right .slds-input--bare {
+    margin-top:-2px !important;
+}
+td {
+    padding:2px !important;
+}

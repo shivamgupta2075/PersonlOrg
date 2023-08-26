@@ -1,0 +1,14 @@
+<template>
+    <lightning-card  title="Account Creation" >
+        <p class="slds-p-horizontal_small " >
+            <lightning-record-form
+            record-id={RecordId}
+            object-api-name="Account"  
+            layout-type="Full"
+            columns = "2"
+            mode="edit"
+            onsuccess= {handlesuccess}>
+        </lightning-record-form>
+</p>
+    </lightning-card>
+</template>

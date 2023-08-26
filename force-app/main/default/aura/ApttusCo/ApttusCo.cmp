@@ -1,0 +1,176 @@
+<aura:component>
+    <ltng:require styles="{! $Resource.ThakurBootStrap + '/css/bootstrap.min.css'}" 
+                  scripts="{!join(',', 
+                           $Resource.ThakurJQuery , 
+                           $Resource.ThakurBootStrap + '/js/bootstrap.min.js')
+                           }"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <body>
+        <div class="container-fluid">
+            <header>
+                <div class="bg-success text-right p-2 ">
+                    <span class="m-2">SignIn</span>  
+                    
+                    <span class="mr-2">Register</span>
+                </div>
+                <br/>
+                <div class="bg-warning text-center text-justify p-1">
+                    <p class="mt-2">Accelerating Digital Transformation: Apttus + Conga</p>
+                </div>
+                
+            </header>
+            <section>
+                
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+                    <div class="container">
+                        <a class="navbar-brand" href="#">
+                            <img src="https://community.apttus.com/html/assets/apptus-community-logo.png" alt=""/>
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarResponsive">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        CUSTOMER SUCCESS 
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        RESOURCES 
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        UNIVERSITY
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </section>
+            <section>
+                <div class="card bg-dark text-white">
+                    <img class="card-img" src="https://community.apttus.com/html/assets/IMG_8577-light.jpg" alt="Card image"/>
+                    <div class="card-img-overlay">
+                        <div class="text-center ">
+                            <h5 class="card-title">WELCOME</h5>
+                            <p class="card-text">TO THE</p>
+                            <p class="card-text">APTTUS</p>
+                            <p class="card-text">COMMUNIT
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="card bg-dark text-white">
+                    <img class="card-img img-fluid" src="https://community.apttus.com/html/assets/community_iPad.png" alt="Card image"/>
+                    <div class="card-img-overlay">
+                        <div class="text-center ">
+                            <h1  class="card-title">What can we help you to find on Apttus Community?</h1>
+                        </div>
+                        <div class="text-center">
+                            <nav class="navbar navbar-light">
+                                <form class="form-inline">
+                                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
+                                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                                </form>
+                            </nav>
+                        </div><br/>
+                        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                        <div class="container cfg">
+                            <div class="row">
+                                <div class="col-md-3 col-sm-3">
+                                    <div class="card">
+                                        <img class="card-img-top img-fluid" src="https://image.flaticon.com/icons/png/512/236/236831.png" alt="Card image cap"/>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Card title</h5>
+                                                <p class="card-text">Some </p>
+                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="card ">
+                                            <img class="card-img-top img-fluid" src="https://image.flaticon.com/icons/png/512/236/236831.png" alt="Card image cap"/>
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Card title</h5>
+                                                    <p class="card-text">Some quick</p>
+                                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                                </div>
+                                            </div></div>
+                                        <div class="col-md-3">
+                                            <div class="card">
+                                                <img class="card-img-top img-fluid" src="https://image.flaticon.com/icons/png/512/236/236831.png" alt="Card image cap"/>
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">Card title</h5>
+                                                        <p class="card-text">Some t.</p>
+                                                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                                                    </div>
+                                                </div></div>
+                                            <div class="col-md-3">
+                                                <div class="card">
+                                                    <img class="card-img-top img-fluid" src="https://image.flaticon.com/icons/png/512/236/236831.png" alt="Card image cap"/>
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">Card title</h5>
+                                                            <p class="card-text">Some qs content.</p>
+                                                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                                                        </div>
+                                                    </div></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>  
+                            </section>
+          
+                            <section>
+                                <div class="container w-100">
+                                	<div class="row">
+                                    	<div class="col-md-6">
+                                        <div>
+                                    <img src="https://community.apttus.com/html/assets/ideas-bg-light.jpg" class="img-fluid"/>
+                                </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                        <div>
+                                    <img src="https://community.apttus.com/html/assets/ideas-bg-light.jpg" class="img-fluid"/>
+                                </div>
+                                        </div>
+                                    
+                                    </div>
+                                </div>
+                                
+                                
+                                
+                            </section>
+                            
+                            
+                            
+                        </div>    
+                        
+                    </body>
+                    
+                    
+                    
+                    
+                </aura:component>

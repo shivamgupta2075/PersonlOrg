@@ -1,0 +1,36 @@
+/*
+.slds-button_neutral, .slds-button--neutral{
+    background-color:rgb(40, 40, 87) !important;
+    color:white !important;
+    text-align: center !important;
+    justify-content: center !important;
+}
+.slds-grid_align-spread, .slds-grid--align-spread{
+justify-content: center !important;
+}
+
+.slds-button_brand, .slds-button--brand {
+    
+}
+lightning-primitive-icon{
+    background-color:tomato;
+    color:whitesmoke;
+}
+
+    .slds-th__action{
+        background-color: teal !important;
+    }
+    .slds-table_header-fixed_container, .slds-table--header-fixed_container{
+        background-color: teal !important; 
+
+    }*/
+
+    .slds-modal__container{
+        width: 80% !important;
+        max-width: 80% !important;
+    }
+    tr:nth-child(even){
+        background-color:red;
+        }
+    tr:nth-child(odd){
+        background-color:green;}

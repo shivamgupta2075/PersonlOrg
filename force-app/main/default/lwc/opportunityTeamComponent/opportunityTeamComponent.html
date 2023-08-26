@@ -1,0 +1,17 @@
+<template>
+<header style="display:flex; justify-content:center;">
+<lightning-button variant="brand" label="Save" onclick={handleSave} class="slds-m-left_x-small"></lightning-button>
+<lightning-button variant="brand" label="Save And More" onclick={handleSaveAndMore} class="slds-m-left_x-small"></lightning-button>
+<lightning-button variant="brand" label="Cancel" onclick={handleCancel} class="slds-m-left_x-small"></lightning-button>
+</header>
+<div>
+    <ul>
+        <template for:each={indexData} for:item="employee" for:index="index">
+             <li key={indexData.index}>
+                <c-opportunity-team></c-opportunity-team> 
+             </li>
+        </template> 
+    </ul>
+
+</div>
+</template>

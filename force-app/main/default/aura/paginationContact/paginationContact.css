@@ -1,0 +1,20 @@
+.THIS li{
+    list-style:none;
+}
+.THIS .pad {
+    margin-top:25px;
+}
+.THIS .dynamic_counter{
+    padding:8px;
+    color :red;
+
+}
+.THIS .page_number{
+    margin-left:50%;
+}
+.THIS .header_check{
+    background-color:grey;
+    color:white;
+    padding:2px;
+    font-weight:bolder;
+}

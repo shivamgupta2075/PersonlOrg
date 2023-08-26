@@ -1,0 +1,92 @@
+.left{
+    background-color:black;
+    color:darkgray;
+    height:100vh;
+    max-height:100%;
+   
+}
+.right{
+    background-color:#1d1d1d;
+    color:darkgray;
+    height:100vh; 
+    
+}
+.left img{
+    height:40px;
+    width:131px;
+}
+.leftUl{
+    padding:29px;
+    font-size:15px;
+    /* margin:4px 10px 10px 10px;
+    */
+    
+}
+.playlist{
+    margin:30px;
+}
+
+.outerborder{
+    width:210px;
+    height:264px;
+    box-sizing: border-box;
+    margin-left: 7px;
+    background-color:#101010;
+    border:1px solid white;
+}
+.innerborder{
+    width:180px;
+    height:157px;
+    box-sizing: border-box;
+    margin:14px;
+    padding:4px;
+
+    
+}
+.buttonLogin {
+    background-color: #ddd;
+    border: none;
+    color: black;
+    width:138px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 16px;
+  }
+  .buttonSIGn{
+    
+    border: none;
+    color: white;
+    width:138px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: #101010;
+    
+  }
+  .leftUl span{
+      padding:4px;
+      margin-left: 10px;
+      margin-top:2px;
+  }
+    
+.buttonSIGns{
+    
+    padding: 10px 0px 5px 21px;
+    text-align: center;
+}
+.wrapper {
+    display: grid;
+   grid-template-columns: repeat(5, 1fr);
+   /* grid-template-rows: repeat(3, 100px); */
+}
+    .outerborder:hover{
+        background-color: #1d1d1d; transition: 0.5s;
+       
+    }

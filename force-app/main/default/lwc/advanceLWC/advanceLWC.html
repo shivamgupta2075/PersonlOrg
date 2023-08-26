@@ -1,0 +1,42 @@
+<template>
+    <lightning-card  title="Ecommerce" >
+        <div class="slds-grid slds-wrap check" >
+            <template for:each={jsondata} for:item="acc">
+                <div key={acc.id} class="slds-col slds-size_4-of-12">
+                    <div>
+                        <span>
+                            <img src={acc.image}/>
+                        </span>
+                    </div> 
+                    <div>
+                        <span >Id <lightning-formatted-rich-text value={acc.id}  ></lightning-formatted-rich-text></span>
+                    </div>
+                    <div >
+                        <span>Title <lightning-formatted-rich-text value={acc.title} ></lightning-formatted-rich-text></span>
+                    </div>
+                    <div>
+                        <span>Price <lightning-formatted-rich-text value={acc.price}></lightning-formatted-rich-text></span>
+                    </div>
+                    <div>
+                        <span>Description <lightning-formatted-rich-text value={acc.description} ></lightning-formatted-rich-text></span>
+                    </div>
+                    <div >
+                        <span>Category <lightning-formatted-rich-text value={acc.category} ></lightning-formatted-rich-text></span>
+                    </div>
+                    <div >
+                        <span>Rating <lightning-formatted-rich-text value={acc.rating}></lightning-formatted-rich-text></span>
+                    </div>
+                    <div>
+                        <span>Rate <lightning-formatted-rich-text value={acc.rate} ></lightning-formatted-rich-text></span>
+                    </div>
+                    <div>
+                        <span>Count <lightning-formatted-rich-text value={acc.count} ></lightning-formatted-rich-text></span>
+                    </div>
+                </div>
+
+            </template>
+
+        </div>
+	
+    </lightning-card> 
+</template>

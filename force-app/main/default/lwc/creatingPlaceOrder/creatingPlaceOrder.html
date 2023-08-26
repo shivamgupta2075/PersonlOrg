@@ -1,0 +1,17 @@
+<template>
+    <template if:true={boolean}>
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-input type="text" name='name' label="Enter FirstName"></lightning-input>
+        </div>
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-input type="text" label="Enter Last Name "></lightning-input>
+        </div>
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-input type="text" label="Email"></lightning-input>
+        </div>
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-input type="text" label="Enter Phone Number"></lightning-input>
+        </div>
+    </template>
+    <lightning-button variant="base" label="Base" title="Looks like a link" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+</template>

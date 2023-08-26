@@ -1,0 +1,34 @@
+<aura:component controller="searchContact" >
+    <aura:attribute name="contactType" type="Contact"
+                    default="{ 'sobjectType': 'Contact',
+                             'FirstName': '',
+                             'LastName':'',
+                             'Email':'',	
+                             }"/>
+    
+    <aura:attribute name="ContactList" type="contact[]"/>
+    
+    <h1 class="header">Search Your Email</h1>
+    <form class="slds-form_stacked">
+            <lightning:input aura:id="ContactList" label="First Name"
+                             name="FirstName"
+                             value="{!v.contactType.FirstName}"
+                             />
+         <lightning:input aura:id="ContactList" label="Last Name"
+                             name="LastName"
+                             value="{!v.contactType.LastName}"
+                             />
+         <lightning:input aura:id="ContactList" label="Email"
+                             name="Email"
+                             value="{!v.contactType.Email}"
+                             />
+            
+            <lightning:button label="Search Contact"
+                              class="slds-m-top_medium"
+                              variant="brand"
+                              onclick="{!c.search}"/>
+        </form>
+    
+    
+    
+</aura:component>

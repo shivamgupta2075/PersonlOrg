@@ -1,0 +1,11 @@
+<aura:component>
+    <form class="try" >
+   <lightning:input aura:id="expenseform" label="Expense Name"
+                             name="expensename"
+                             value="{!v.newExpense.Name}"
+                             required="true"/>
+    </form>
+    
+    
+    
+</aura:component>

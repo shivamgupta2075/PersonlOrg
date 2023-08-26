@@ -1,0 +1,183 @@
+<template>
+        <article class="slds-card">
+            <div class="slds-card__header slds-grid">
+                <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                    <div class="slds-media__figure">
+                        <span class="slds-icon_container slds-icon-standard-account">
+                            <img src="https://grazittiinteractive42-dev-ed.my.salesforce.com/img/icon/t4v35/standard/product_120.png"/>
+                        </span>
+                    </div>
+                    <div class="slds-media__body">
+                        <h2 class="slds-card__header-title">
+                            <a href="#" class="slds-card__header-link slds-truncate" title="oliounts">
+                                <span>OpportunityLineItem</span>
+                            </a>
+                        </h2>
+                    </div>
+                    <lightning-button-menu alternative-text="Next menu" menu-alignment="right">
+                        <lightning-menu-item value="MenuItemOne" label="Add Product" onclick={handleaddProduct} ></lightning-menu-item>
+                        <lightning-menu-item value="MenuItemTwo" label="Choose Price Book" onclick={handlepricebook}></lightning-menu-item>
+                    </lightning-button-menu>
+                    
+                </header>
+            </div>
+        </article>
+        <!--Use template if:true to display/hide popup based on isModalOpen value--> 
+        <template if:true={isModalOpen}>
+            <!-- Modal/Popup Box LWC starts here -->
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <!-- Modal/Popup Box LWC header here -->
+                    <header class="slds-modal__header">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                            <lightning-icon icon-name="utility:close"
+                                            alternative-text="close"
+                                            variant="inverse"
+                                            size="small" ></lightning-icon>
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                        <template if:true={product}>
+                            <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate"></h2>
+                            <h2 class="slds-text-heading_medium ">Add Products</h2>
+                            <h4>Price Book: Standard</h4>
+                        </template>
+                        <template if:true={boolVisible}>
+                            <h2 id="modal-heading-02" ></h2>
+                            <h2 class="slds-text-heading_medium ">Edit Selected Products</h2>
+                        </template>
+                    </header>
+                    <!-- Modal/Popup Box LWC body starts here -->
+                    <div class="slds-modal__content slds-p-around_small" id="modal-content-id-2">
+                        
+                        <template if:true={product}>
+                            <!-- <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate slds-modal__header">Add Products</h2> -->
+                           
+                            <div>
+                                <lightning-input type="search" onchange={handleKeyChange} class="slds-m-bottom_small"
+                                            placeholder="search products ..."
+                                             value={searchKey}></lightning-input>
+                                             <div>
+                                                 Show Selected ({checkedList})
+                                             </div>
+                            </div>
+                            <div class="slds-grid_align-end">
+                                <lightning-datatable 
+                                data={product} 
+                                columns={columns} 
+                                key-field="Id"
+                                onrowselection={handlerowaction}
+                                >
+           </lightning-datatable>
+                            </div>
+                            
+                        </template>
+                        <template if:true={boolVisible} >  
+                            <table class="slds-table slds-table_bordered slds-table_cell-buffer" >
+                                <thead>
+                                    <tr>
+                                        <th scope="col" >
+                                            <div class="slds-truncate slds-th__action" title="S.No"></div>
+                                        </th>
+                                        <th scope="col" >
+                                            <div class="slds-truncate slds-th__action" title="Product">Product</div>
+                                        </th>
+                                        
+                                        <th scope="col" >
+                                            <div class="slds-truncate slds-th__action" title="Quantity ">Quantity </div>
+                                        </th>
+                                        <th scope="col" >
+                                            <div class="slds-truncate" title="SalesPrice">Sales Price</div>
+                                        </th>
+                                        
+                                        <th scope="col" >
+                                            <div class="slds-truncate" title="Date">Date</div>
+                                        </th>
+                                        <th scope="col" >
+                                            <div class="slds-truncate" title="LineDescription ">Line Description</div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>      
+                                    <template for:each={oliList} for:item="oli" for:index="index">
+                                        <tr key={oli.Product}> 
+                                            <td>{index}</td>                                                   
+                                            <td>
+                                                <lightning-input name='Product' 
+                                                                access-key={index}
+                                                                 id={index}
+                                                                 type='text' 
+                                                                 disabled = true
+                                                                 value={oli.Product}
+                                                                 onchange={handleinput}>
+                                                    
+                                                </lightning-input>
+                                            </td>
+                                            <td>
+                                                <lightning-input
+                                                                 name='Quantity' 
+                                                                 access-key={index}
+                                                                 id={index}
+                                                                 type='text' 
+                                                                 value={oli.Quantity}
+                                                                 onchange={handleinput}
+                                                                 ></lightning-input>                               
+                                            </td>
+                                            <td>
+                                                <lightning-input
+                                                                 name='SalesPrice' 
+                                                                 access-key={index}
+                                                                 id={index}
+                                                                 type='text' 
+                                                                 value={oli.SalesPrice}
+                                                                 onchange={handleinput}
+                                                                 ></lightning-input>                               
+                                            </td>
+                                            <td>
+                                                <lightning-input
+                                                                 name='Date' 
+                                                                 access-key={index}
+                                                                 id={index}
+                                                                 type='date' 
+                                                                 value={oli.Date}
+                                                                 onchange={handleinput}
+                                                                 ></lightning-input>                               
+                                            </td>
+                                            <td>
+                                                <lightning-input
+                                                                 name='LineDescription' 
+                                                                 access-key={index}
+                                                                 id={index}
+                                                                 type='text' 
+                                                                 value={oli.LineDescription}
+                                                                 onchange={handleinput}
+                                                                 ></lightning-input>                               
+                                            </td>
+                                            
+                                            <td>
+                                                <lightning-icon icon-name="utility:delete"  access-key={index} id={index} alternative-text="Click to Call" size="small" onclick={deleteRow}>
+                                                </lightning-icon> 
+                                               
+                                                                      
+                                            </td>
+                                        </tr>
+                                    </template>
+                                    
+                                </tbody>
+                            </table>  
+                            
+                            
+                        </template>
+                    </div>
+                    <!-- Modal/Popup Box LWC footer starts here -->
+                    <footer class="slds-modal__footer">
+                        <lightning-button variant="neutral"  label="Back" title="Back"  hidden={backdisabled} onclick={handleBack} class="slds-m-left_x-small slds-float_left" ></lightning-button> 
+                        <button class="slds-button slds-button_neutral" onclick={closeModal} title="Cancel">Cancel</button>
+                        <lightning-button variant="brand" label={clickedButtonLabel} title="Next" onclick={handleNext} disabled ={hideNext} class="slds-m-left_x-small"></lightning-button> 
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>
+        <!-- lightning button for open modal window -->
+        
+    </template>

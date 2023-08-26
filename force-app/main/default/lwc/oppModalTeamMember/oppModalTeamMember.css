@@ -1,0 +1,22 @@
+.slds-modal__container {
+    max-width: 80rem !important;
+    width: 80% !important;
+}
+lightning-input{
+    margin-top:-17px !important;
+    width:100% !important;
+}
+tbody {
+    margin:0px !important;
+}
+input[aria-readonly=true][lightning-baseCombobox_baseCombobox]{
+    margin:0px !important;
+    padding:0px;
+}
+.slds-input-has-icon_left-right .slds-input, .slds-input-has-icon_left-right .slds-input_bare, .slds-input-has-icon_left-right .slds-input--bare, .slds-input-has-icon--left-right .slds-input, .slds-input-has-icon--left-right .slds-input_bare, .slds-input-has-icon--left-right .slds-input--bare {
+    margin-top:-3px !important;
+}
+[lightning-input_input-host] {
+    display: block;
+    margin-top: -23px !important;
+}

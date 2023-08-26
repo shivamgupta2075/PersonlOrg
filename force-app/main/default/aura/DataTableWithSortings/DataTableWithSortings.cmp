@@ -1,0 +1,20 @@
+<aura:component controller="DataTableWithSorting">
+  <aura:handler name="init" value="{! this }" action="{! c.doInit }" />
+  <aura:attribute name="column" type="List" />
+  <aura:attribute name="data" type="Object" />
+  <aura:attribute name="sortedBy" type="String" default="Name"/>
+ <aura:attribute name="sortedDirection" type="string" default="asc" />
+
+  <div>
+    <lightning:datatable
+      keyField="id"
+      data="{! v.data }"
+      columns="{! v.column }"
+      hideCheckboxColumn="true"
+      onsort="{!c.updateSorting}"
+      sortedBy="{!v.sortedBy}"
+      sortedDirection="{!v.sortedDirection}"
+    />
+  </div>
+    
+</aura:component>

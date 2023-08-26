@@ -1,0 +1,28 @@
+<template>
+        <template if:true={create}>
+        <lightning-record-form
+                object-api-name={objectApiName}
+                fields={fields}
+                onsuccess={handleSuccess}>
+        </lightning-record-form>
+        </template>
+        <template if:true={update}>
+                <lightning-record-edit-form
+                        record-id={recordId}
+                        object-api-name={objectApiName}>
+                        <!--Other fields here -->
+                        <lightning-input-field name="Name" field-name="Name">
+                        </lightning-input-field>
+                        <lightning-input-field name="AnnualRevenue" field-name="AnnualRevenue">
+                        </lightning-input-field>
+                        <lightning-input-field name="Industry" field-name="Industry">
+                        </lightning-input-field>
+                        <lightning-button class="slds-m-top_small" label="Reset Email" onclick={handleReset}>
+                        </lightning-button>
+                </lightning-record-edit-form>
+                </template>
+        <lightning-button  label="Create Contact" variant="brand"  onclick={handleCreate}>
+        </lightning-button>&nbsp;
+        <lightning-button  label="Update Contact" variant="brand" onclick={handleUpdate}>
+        </lightning-button>
+</template>

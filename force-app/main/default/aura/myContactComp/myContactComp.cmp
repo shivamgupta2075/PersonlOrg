@@ -1,0 +1,18 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" controller="ContactController" access="global" >
+ <aura:attribute name="contactList" type="contact[]"/>
+    <aura:handler name="searchContact" event="c:ContactFormEvent" action="{!c.handlerUpdate}"/>
+       
+    <c:ContactForm/>
+  
+    <lightning:card title="Contacts">
+        <p class="slds-p-horizontal_small">
+            <aura:iteration items="{!v.contactList}" var="cont" >
+                       <c:myContactItems expense="{!cont}"/> 
+                       	
+           </aura:iteration >
+            
+        </p>
+    </lightning:card>    
+    
+    
+</aura:component>

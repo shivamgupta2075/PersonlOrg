@@ -1,0 +1,54 @@
+<aura:component >
+     <aura:registerEvent name="searchContact" type="c:ContactFormEvent"/>
+   
+	   <aura:attribute name="newExpense" type="Contact"
+         default="{ 'sobjectType': 'Contact',
+                        'FirstName': '',
+                        'lastName': '',
+                        'Email': '' }"/>
+    
+        <!-- CREATE NEW EXPENSE -->
+    <div aria-labelledby="newexpenseform">
+        <!-- BOXED AREA -->
+        <fieldset class="slds-box slds-theme_default slds-container_small">
+        <legend id="newexpenseform" class="slds-text-heading_small
+          slds-p-vertical_medium">
+          Contact Form 
+        </legend>
+        <!-- CREATE NEW EXPENSE FORM -->
+       <div>
+    	<div class="slds-m-top_medium slds-m-bottom_x-large">
+        <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+            A text input field that cannot have more than 10 characters.
+        </h2>
+
+        <!-- Default/basic -->
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning:input aura:id="expenseform" value="{!v.newExpense.FirstName}" type="text" label="First Name" placeholder="type here..." maxlength="10"/>
+        </div>
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning:input aura:id="expenseform"  value="{!v.newExpense.LastName}" type="text" label="Last Name" placeholder="type here..." maxlength="10" required="true"/>
+        </div>
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning:input aura:id="expenseform"  value="{!v.newExpense.Email}" type="text" label="Email" placeholder="type here..." maxlength="10"/>
+        </div>
+         <span class="slds-p-around_medium lgc-bg">
+            <lightning:button type="buttom" class="slds-button slds-button-success" label="Search" onclick="{!c. searchContactList}"/>
+         </span>
+         <span class="slds-p-around_medium lgc-bg">
+            <lightning:button type="buttom" class="slds-button slds-button-success" label="Create" onclick="{!c.CreateContactList}"/>
+            </span>
+        
+    </div>
+    
+    
+            </div>
+        <!-- / CREATE NEW EXPENSE FORM -->
+      </fieldset>
+      <!-- / BOXED AREA -->
+    </div>
+    <!-- / CREATE NEW EXPENSE -->
+  
+
+    
+</aura:component>

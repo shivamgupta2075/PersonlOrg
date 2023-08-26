@@ -1,0 +1,44 @@
+<aura:component
+  controller="sobjectWithField"
+  implements="force:hasRecordId,force:appHostable,flexipage:availableForAllPageTypes"
+  access="global"
+>
+  <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="options" type="List" /> 
+    <aura:attribute name="selectedvalue" type="List" default="[]"/>
+    <aura:attribute name="data" type="Object"/>
+    <aura:attribute name="columns" type="List"/>
+
+
+  <div class="slds-col">
+    <lightning:combobox
+      aura:id="SobjectList"
+      name="SobjectList"
+      label="Select Object"
+      placeholder="Select Object"
+      onchange="{!c.getfields}"
+      value=""
+  /></div>
+
+
+      <lightning:dualListbox name="FieldsList" 
+                             aura:id="FieldsList"
+                       label= "FieldsList" 
+                       sourceLabel="Available" 
+                       selectedLabel="Selected" 
+                       fieldLevelHelp="This is a dual listbox" 
+                       options="{!v.options}" 
+                       value="{! v.selectedvalue }"
+                      />
+    <br/>
+    
+    <lightning:button variant="brand" label="Selected Items" onclick="{!c.getSelectedItems }" />
+    <br/>
+    <div style="height: 300px">
+        <lightning:datatable
+                keyField="id"
+                data="{! v.data }"
+                columns="{! v.columns }"
+                hideCheckboxColumn="true"/>
+    </div>
+</aura:component>

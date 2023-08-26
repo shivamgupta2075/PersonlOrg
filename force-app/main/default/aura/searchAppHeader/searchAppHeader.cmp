@@ -1,0 +1,5 @@
+<aura:component implements="force:appHostable" >
+	<div>
+        <h2 class="slds-page-header slds-align_absolute-center slds-text-heading_large slds-box slds-theme_shade slds-theme_alert-texture">List OF Contacts</h2>
+    </div>
+</aura:component>

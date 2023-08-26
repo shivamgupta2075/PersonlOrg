@@ -1,0 +1,15 @@
+<aura:component >
+<aura:attribute name="item" type="contact"/>
+        <p class="slds-p-horizontal_small">
+            First Name: {!v.item.FirstName}
+        </p>
+          
+        <p class="slds-p-horizontal_small">
+            Last Name: {!v.item.LastName}
+        </p>
+          
+        <p class="slds-p-horizontal_small">
+            Email: {!v.item.email}
+        </p>
+        
+</aura:component>

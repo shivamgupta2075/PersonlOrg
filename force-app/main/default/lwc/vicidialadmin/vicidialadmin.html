@@ -1,0 +1,85 @@
+<template>
+    <table class="slds-table slds-table_bordered slds-table_cell-buffer" >
+        <thead>
+            <tr>
+                <th scope="col" >
+                    <div class="slds-truncate slds-th__action" title="User"> Client Name </div>
+                </th>
+                <th scope="col" >
+                    <div class="slds-truncate slds-th__action" title="Amount">Amount</div>
+                </th>
+                <th scope="col" >
+                    <div class="slds-truncate slds-th__action" title="EXT.PRICE">EXT.PRICE</div>
+                </th>
+                <th scope="col" >
+                    <div class="slds-truncate slds-th__action" title="TOTALExtension">TOTAL Extension</div>
+                </th>
+                <th scope="col" >
+                    <div class="slds-truncate slds-th__action" title="RemainingExtension">Remaining Extension</div>
+                </th> 
+               
+                <th scope="col" >
+                    <div class="slds-truncate" title="Action">Update / Remove</div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <template for:each={opportunityRecList} for:item="opporuntity" for:index="index">
+
+                <tr key={keyIndex}>
+                   
+                    <td>
+                        <div>
+                           <c-lwc-lookup  name='User' accesskey={index} id={index} type='text' selected={changeHandler}></c-lwc-lookup>
+                       </div>
+                       </td>
+                    <td>
+                        <div class="slds-form-element">
+                            <div class="slds-form-element__control">
+                            <input type="text" name='TeamRole' id={index} accesskey={index} placeholder="Placeholder text…" required="" class="slds-input" />
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="slds-form-element">
+                            <div class="slds-form-element__control">
+                            <input type="text" name='TeamRole' id={index} accesskey={index} placeholder="Placeholder text…" required="" class="slds-input" />
+                            </div>
+                        </div>
+                    </td>  
+                    <td>
+                        <div class="slds-form-element">
+                            <div class="slds-form-element__control">
+                            <input type="text" name='TeamRole' id={index} accesskey={index} placeholder="Placeholder text…" required="" class="slds-input" />
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="slds-form-element">
+                            <div class="slds-form-element__control">
+                            <input type="text" name='TeamRole' id={index} accesskey={index} placeholder="Placeholder text…" required="" class="slds-input" />
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <lightning-icon icon-name="utility:delete"  access-key={index} id={index} alternative-text="Click to Call" size="small" onclick={removeRow}>
+                        </lightning-icon>                                            
+                        &nbsp;
+                        <lightning-button variant="brand" label="Update" title="Primary action" access-key={index} id={index} onclick={handleClick} class="slds-m-left_x-small"></lightning-button>                                            
+                    </td>
+                    
+                </tr>
+
+            </template>
+        </tbody>
+    </table>  
+<br/>
+<!-- Modal/Popup Box LWC footer starts here -->
+        <footer class="slds-modal__footer">
+        <lightning-button  label="Add" variant="brand"  onclick={addRow}>
+        </lightning-button>&nbsp;
+        <lightning-button  label="Save" variant="brand" onclick={saveMultipleAccounts}>
+        </lightning-button>
+        </footer>
+
+</template>

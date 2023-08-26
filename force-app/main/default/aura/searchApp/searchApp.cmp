@@ -1,0 +1,89 @@
+<aura:component controller="searchContact" >
+    <aura:registerEvent name="appEvent" type="c:searchAppEvent"/>
+    <aura:attribute name="InsertedContacts" type="Contact"
+                    default="{ 'sobjectType': 'Contact',
+                             'FirstName': '',
+                             'LastName':'',
+                             'Email':'',	
+                             }"/>
+    <aura:attribute name="updateContacts" type="Contact"/> 
+    <aura:handler name="updateContactsEvent" event="c:searchAppEvent" action="{!c.parentComponentEvent}"/>
+    <aura:attribute name="column" type="Object" /> 
+    <aura:attribute name="ContactData" type="Object" />
+    <aura:attribute name="getId" type="Id[]" />
+    <aura:attribute name="PaginationList" type="Contact"/>
+    <aura:attribute name="startPage" type="Integer" default="0"/>
+    <aura:attribute name="endPage" type="Integer" default="0"/>
+    <aura:attribute name="totalRecords" type="Integer"/>
+    <aura:attribute name="totalPages" type="Integer" default="0" />
+    <aura:attribute name="pageSize" type="Integer" default="5"/>
+    <aura:attribute name="pageNumber" type="Integer" default="0" />
+    <aura:attribute name="countPage" type="Integer" default="0" />
+    <aura:attribute name ="isNoContent" type="Boolean" default="false"/>
+    
+    
+    <c:searchAppHeader/>
+    <form action="#">
+        <div class="slds-size_1-of-3">
+            <p class="slds-text-heading--medium slds-p-horizontal--small" >
+                First Name: <lightning:input  aura:id= "oldContact" value='{!v.InsertedContacts.FirstName}' />
+            </p>
+            <p class="slds-text-heading--medium slds-p-horizontal--small">
+                Last Name: <lightning:input  aura:id= "oldContact" value='{!v.InsertedContacts.LastName}'/>
+            </p>
+            <p class="slds-text-heading--medium slds-p-horizontal--small">
+                Email: <lightning:input  aura:id= "oldContact" value='{!v.InsertedContacts.Email}' />
+            </p>                               
+        </div>
+        
+    </form>
+    
+    <br/>
+    <span class="slds-p-around_medium lgc-bg">
+        <lightning:button type="button"   class="slds-button slds-button-success" label="Clear Text " onclick= "{!c.clearText}"/>
+    </span>
+    <span class="slds-p-around_medium lgc-bg">
+        <lightning:button type="button"   class="slds-button slds-button-success" label="Search " onclick="{!c.searching}"/>
+    </span>
+    <span class="slds-p-around_medium lgc-bg">
+        <lightning:button type="button"   class="slds-button slds-button-success slds-hide" aura:id= "updateCss" label="IsActive " onclick="{!c.updateValue}"  />
+    </span>   
+    <div>
+        <br/>
+        <aura:if isTrue = "{!v.isNoContent}">
+            
+            <span class="slds-align_absolute-center slds-text-heading_large " >No Record Found</span>
+            <aura:set attribute="else">
+                <lightning:datatable
+                                     keyField="id"
+                                     aura:id="Refreshingdata"
+                                     data="{! v.ContactData }"
+                                     columns="{! v.column }"
+                                     hideCheckboxColumn="false"
+                                     hideDefaultActions="true"
+                                     onrowselection="{!c.doSelect}"
+                                     
+                                     />
+            </aura:set>
+        </aura:if>
+    </div> 
+    <div class="slds-clearfix">
+        <div class="slds-page-header" role="banner">
+            <div class="slds-float_right">            
+                <lightning:button disabled="{!v.startPage == 0}" variant="brand" aura:id="prevPage" label="Prev" onclick="{!c.handlePrev}" />            
+                <lightning:button disabled="{!v.endPage >= v.totalPages || !v.endPage == 0}" aura:id="nextPage" variant="brand" label="Next" onclick="{!c.handleNext}"/>
+                <!--<lightning:button  variant="brand" aura:id="startPage" label="startPage" onclick="{!c.startPage}" />            
+                    <lightning:button  aura:id="endPage" variant="brand" label="endPage" onclick="{!c.endPage}"/>-->
+            </div>
+            <p class="slds-page-header__title">Total Pages  {!v.pageNumber}</p>
+        </div>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</aura:component>

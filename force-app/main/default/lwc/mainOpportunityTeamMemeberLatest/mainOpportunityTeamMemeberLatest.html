@@ -1,0 +1,25 @@
+<template>
+   
+    <div>
+        
+    <div class="slds-grid slds-grid_align-start" >
+       <h1> Opportunity Team </h1>
+    </div>
+    <div class="slds-grid slds-grid_align-end" >
+
+        <div class="slds-col">
+            <button class="slds-button slds-button_neutral" onclick ={AddDefaultTeam}>Add Default Team</button>
+        </div>
+        <div class="slds-col">
+            <c-opp-Modal-Team-Member></c-opp-Modal-Team-Member>
+          
+        </div>
+        <div class="slds-col">
+            <button class="slds-button slds-button_neutral" onclick ={TeamMemberAccess}>Team Member Access</button>
+        </div>
+        <div class="slds-col">
+            <button class="slds-button slds-button_neutral" onclick ={RemoveAllMembers}>Remove All Members</button>
+        </div>
+      </div>
+    </div>
+</template>

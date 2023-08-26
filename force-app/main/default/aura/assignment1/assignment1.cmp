@@ -1,0 +1,4 @@
+<aura:component >   
+    <c:assignment1List/>
+    <c:assignmnetListitem/>
+</aura:component>
